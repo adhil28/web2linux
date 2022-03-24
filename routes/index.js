@@ -33,6 +33,10 @@ router.post('/gen', (req, res) => {
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
       console.log('packed successfully. ', 'sending file');
+      res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+      res.setHeader('Access-Control-Allow-Credentials', true);
+      res.setHeader('Access-Control-Allow-Origin', 'https://web2linux.herokuapp.com');
+
       res.download(`${data.name}.zip`)
 
       setTimeout(() => {
