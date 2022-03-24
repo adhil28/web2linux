@@ -33,7 +33,6 @@ router.post('/gen', (req, res) => {
     height: '768',
     'disable-dev-tools': true,
     'single-instance': data.site,
-    'i': data.logo
   }).then((path) => {
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
