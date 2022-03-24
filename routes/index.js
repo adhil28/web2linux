@@ -19,7 +19,11 @@ router.post('/gen', (req, res) => {
   data.name = data.name + Math.floor((Math.random() * 1000000) + 1);
   data.site = data.site.replace('https://', '')
 
-  res.setHeader('Access-Control-Allow-Origin','*')
+  res.setHeader('Access-Control-Allow-Origin', '*')
+
+  if (data.logo == null) {
+    data.logo = 'https://logopond.com/logos/764befce2161b53b5895108e1e8597d7.png'
+  }
 
   nativefier.buildNativefierApp({
     name: data.name,
@@ -29,7 +33,8 @@ router.post('/gen', (req, res) => {
     height: '768',
     tray: true,
     'disable-dev-tools': true,
-    'single-instance': data.site
+    'single-instance': data.site,
+    'i': data.logo
   }).then((path) => {
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
