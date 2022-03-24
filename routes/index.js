@@ -31,7 +31,6 @@ router.post('/gen', (req, res) => {
     '--arch x64': true,
     width: '1024',
     height: '768',
-    tray: true,
     'disable-dev-tools': true,
     'single-instance': data.site,
     'i': data.logo
