@@ -35,7 +35,7 @@ router.post('/gen', (req, res) => {
       console.log('packed successfully. ', 'sending file');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
       res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Origin', 'https://web2linux.herokuapp.com');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
       res.download(`${data.name}.zip`)
 
