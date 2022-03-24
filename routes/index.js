@@ -4,7 +4,6 @@ let fs = require('fs')
 const { exec } = require('child_process');
 var Zip = require('zip-a-folder');
 
-let nativefier = require('nativefier')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
