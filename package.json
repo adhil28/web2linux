@@ -1,7 +1,6 @@
 {
   "name": "web2appserver",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -15,5 +14,18 @@
     "morgan": "~1.9.1",
     "nativefier": "^46.2.0",
     "zip-a-folder": "^1.1.3"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adhil28/web2linux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adhil28/web2linux/issues"
+  },
+  "homepage": "https://github.com/adhil28/web2linux#readme",
+  "description": ""
 }
