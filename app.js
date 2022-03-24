@@ -16,7 +16,7 @@ app.set('view engine', 'hbs');
 var bodyParser = require('body-parser');
 
 
-app.use(cors());
+app.use(cors({credentials: true, origin: 'https://web2linux.web.app'}));
 
 
 app.use(bodyParser.urlencoded())
