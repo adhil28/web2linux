@@ -39,7 +39,7 @@ router.post('/gen', (req, res) => {
         console.log('Deleting files')
         fs.unlinkSync(`${data.name}.zip`)
         fs.rmSync(path, { recursive: true, force: true });
-      }, 1000 * 60 * 1)
+      }, 1000 * 60 * 5)
 
     })
   }).catch((r) => {
