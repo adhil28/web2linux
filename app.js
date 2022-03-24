@@ -16,7 +16,7 @@ app.set('view engine', 'hbs');
 var bodyParser = require('body-parser');
 
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 app.use(bodyParser.urlencoded())
