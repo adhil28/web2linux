@@ -33,7 +33,7 @@ router.post('/gen', (req, res) => {
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
       console.log('packed successfully. ', 'sending file');
-      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
       res.setHeader('Access-Control-Allow-Credentials', true);
 
