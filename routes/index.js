@@ -24,8 +24,8 @@ router.post('/gen', (req, res) => {
   if (data.logo == null) {
     data.logo = 'https://logopond.com/logos/764befce2161b53b5895108e1e8597d7.png'
   }
-
-  nativefier.buildNativefierApp({ 'single-instance': data.site }).then((path) => {
+  exec('nativefier ' + data.site, (e, r) => {
+    let path = r.split('App built to ')[1].split(', move to wherever it')[0]
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
       console.log('packed successfully. ', 'sending file');
@@ -35,11 +35,9 @@ router.post('/gen', (req, res) => {
         console.log('Deleting files')
         fs.unlinkSync(`${data.name}.zip`)
         fs.rmSync(path, { recursive: true, force: true });
-      }, 1000 * 60 * 5)
+      }, 1000 * 60 * 3)
 
     })
-  }).catch((r) => {
-    console.log(r);
   })
 })
 

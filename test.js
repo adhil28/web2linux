@@ -1,14 +1,6 @@
-a.buildNativefierApp({
-    name: 'whatsapp',
-    platform: 'linux',
-    '--arch x64': true,
-    width: '1024',
-    height: '768',
-    tray: true,
-    'disable-dev-tools': true,
-    'single-instance': 'web.whatsapp.com'
-}).then((r) => {
-    console.log('done');
-}).catch((r) => {
+const { exec } = require('child_process');
+
+exec('nativefier www.hotstar.com',(e,r)=>{
+    r= r.split('App built to ')[1].split(', move to wherever it')[0]
     console.log(r);
 })
