@@ -25,15 +25,7 @@ router.post('/gen', (req, res) => {
     data.logo = 'https://logopond.com/logos/764befce2161b53b5895108e1e8597d7.png'
   }
 
-  nativefier.buildNativefierApp({
-    name: data.name,
-    platform: 'linux',
-    '--arch x64': true,
-    width: '1024',
-    height: '768',
-    'disable-dev-tools': true,
-    'single-instance': data.site,
-  }).then((path) => {
+  nativefier.buildNativefierApp({ 'single-instance': data.site }).then((path) => {
     console.log('App successfully created. ', 'Packing app');
     Zip.zip(path, `${data.name}.zip`).then(() => {
       console.log('packed successfully. ', 'sending file');
