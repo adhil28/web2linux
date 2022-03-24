@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node ./bin/www",
-    "build": "npm i nativefier -g"
+    "build": "npm i nativefier"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
