@@ -15,8 +15,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 var bodyParser = require('body-parser');
 
-
-app.use(cors());
+const corsOptions ={
+  origin:'https://web2linux.web.app', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 
 app.use(bodyParser.urlencoded())
